@@ -67,6 +67,7 @@ public class MainActivity extends BaseActivity {
 
 
     private static final String TAG = "hdu";
+    private Button clean;
 
     public static final int TAKE_PHOTO = 1;
     public static final int CROP_PHOTO = 2;
@@ -91,6 +92,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setListener() {
+        clean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text_to_get_picture.setText("点击放入识别照片");
+                clean.setVisibility(View.INVISIBLE);
+                imageView.setImageResource(R.drawable.toux);
+            }
+        });
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +199,9 @@ public class MainActivity extends BaseActivity {
         imageView_parent=findViewById(R.id.image_parent);
         start=findViewById(R.id.radio3);
         text_to_get_picture=findViewById(R.id.text_to_get_picture);
+        clean=findViewById(R.id.clean);
+        clean.setVisibility(View.INVISIBLE);
+
         //chooseFromAlbum=findViewById(R.id.radio2);
 
 
@@ -281,6 +293,9 @@ public class MainActivity extends BaseActivity {
 
                     imageView.setImageBitmap(photo);
                     text_to_get_picture.setText(null);
+                    clean.setText("点击清除图片");
+                    clean.setVisibility(View.VISIBLE);
+
 
 
                 }
@@ -304,6 +319,10 @@ public class MainActivity extends BaseActivity {
                         Bitmap bitmap1=rotateBitmapByDegree(bitmap,90);
                         imageView.setImageBitmap(bitmap1);
                         text_to_get_picture.setText(null);
+                        clean.setText("点击清除图片");
+                        clean.setVisibility(View.VISIBLE);
+
+
 
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();

@@ -52,7 +52,6 @@
         android:layout_centerInParent="true"
 
         android:src="@drawable/toux"
-        android:tooltipText="点击放入人脸照片"
         />
     <TextView
         android:id="@+id/text_to_get_picture"
@@ -64,12 +63,20 @@
         android:textColor="#42AAA0"
         android:text="点击放入识别照片"/>
 
-
+    <Button
+        android:id="@+id/clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image"
+        android:text="点击清除图片"
+        android:textColor="#000000"/>
 
 </RelativeLayout>
 
 
         <TextView
+            android:paddingTop="20dp"
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

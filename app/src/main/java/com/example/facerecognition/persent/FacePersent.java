@@ -46,6 +46,7 @@ public class FacePersent {
             con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             DataOutputStream osw = new DataOutputStream(con.getOutputStream());
             osw.flush();
+
             osw.close();
             // 读取返回内容
             StringBuilder buffer = new StringBuilder();
